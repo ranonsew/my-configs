@@ -1,0 +1,34 @@
+{
+    "windsurf.autocompleteSpeed": "fast",
+    "workbench.iconTheme": "catppuccin-frappe",
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "files.autoSave": "afterDelay",
+    "editor.suggestSelection": "first",
+    "git.enabled": true,
+    "git.autofetch": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.guides.bracketPairsHorizontal": true,
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "security.workspace.trust.untrustedFiles": "open",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-17",
+            "path": "C:\\Users\\rayse\\scoop\\apps\\temurin17-jdk\\current",
+            "default": true
+        }
+    ],
+    "go.toolsManagement.autoUpdate": true,
+    "scm.compactFolders": false,
+    "editor.linkedEditing": true,
+    "explorer.compactFolders": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": true,
+    "editor.gotoLocation.multipleDefinitions": "goto"
+}

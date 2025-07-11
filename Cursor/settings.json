@@ -1,0 +1,39 @@
+{
+    "files.autoSave": "afterDelay",
+    "git.enabled": true,
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "editor.suggestSelection": "first",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "git.autofetch": true,
+    "workbench.iconTheme": "catppuccin-frappe",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "editor.guides.bracketPairsHorizontal": true,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "security.workspace.trust.untrustedFiles": "open",
+    "python.analysis.extraPaths": [
+        "~\\AppData\\Local\\Programs\\Python\\Python310\\Python.exe"
+    ],
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-17",
+            "path": "C:\\Users\\rayse\\scoop\\apps\\temurin17-jdk\\current",
+            "default": true
+        }
+    ],
+    "go.toolsManagement.autoUpdate": true,
+    "scm.compactFolders": false,
+    "editor.linkedEditing": true,
+    "explorer.compactFolders": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": true,
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "remote.SSH.remotePlatform": {
+        "wsl-remote": "linux"
+    }
+}

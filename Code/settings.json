@@ -1,0 +1,41 @@
+{
+    "files.autoSave": "afterDelay",
+    "git.enabled": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "editor.suggestSelection": "first",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "git.autofetch": true,
+    "workbench.iconTheme": "catppuccin-frappe",
+    "tabnine.experimentalAutoImports": true,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "emmet.syntaxProfiles": {
+        "vue-html": "html",
+        "vue": "html"
+    },
+    "editor.guides.bracketPairsHorizontal": true,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "security.workspace.trust.untrustedFiles": "open",
+    "python.analysis.extraPaths": [
+        "~\\AppData\\Local\\Programs\\Python\\Python310\\Python.exe"
+    ],
+    "material-icon-theme.folders.color": "#26a69a",
+    "go.toolsManagement.autoUpdate": true,
+    "terminal.integrated.fontFamily": "Fira Code",
+    "editor.linkedEditing": true,
+    "svelte.plugin.svelte.note-new-transformation": false,
+    "svelte.enable-ts-plugin": true,
+    "explorer.compactFolders": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "redhat.telemetry.enabled": true,
+    "prisma.showPrismaDataPlatformNotification": false,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": true,
+    "editor.gotoLocation.multipleDefinitions": "goto",
+}

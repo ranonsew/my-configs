@@ -1,0 +1,16 @@
+catppuccin.catppuccin-vsc
+catppuccin.catppuccin-vsc-icons
+codeium.windsurf-cpptools
+codeium.windsurfpyright
+eamodio.gitlens
+formulahendry.auto-rename-tag
+golang.go
+llvm-vs-code-extensions.vscode-clangd
+ms-azuretools.vscode-containers
+ms-azuretools.vscode-docker
+ms-python.debugpy
+ms-python.python
+ms-vscode.cmake-tools
+ms-vscode.makefile-tools
+oderwat.indent-rainbow
+vadimcn.vscode-lldb

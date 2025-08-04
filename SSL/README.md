@@ -1,0 +1,7 @@
+- TLS/SSL certificates (HTTPS instead of HTTP)
+  - nginx, keycloak, apps, etc
+  - Linux:
+    - `sudo cp cert.pem /usr/local/share/ca-certificates/aim-aip-email-gateway-cert.crt && sudo update-ca-certificates`
+    - check with: `sudo ls -alF /usr/local/share/ca-certificates/`
+  - Windows:
+    - dbl click cert.pem, install cert, select local machine, select 'trusted root certficiation authorities', finish

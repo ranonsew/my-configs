@@ -1,0 +1,2 @@
+use catppucin powerline preset
+- catppucin-frappe (set in ~/.config/starship.toml)

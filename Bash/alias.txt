@@ -1,0 +1,4 @@
+alias ll='ls -alhF'
+alias ddu='du -sh'
+alias ipg='ip addr | grep -E "eth0|wlp3s0"'
+alias sshg='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519'

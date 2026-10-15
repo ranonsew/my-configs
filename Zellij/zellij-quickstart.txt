@@ -1,0 +1,72 @@
+---
+
+start zellij: `zellij`
+- try running default commands - `Get-Location`
+- try running additonal commands - `eza -laG`
+- try running alias/function commands - `ll`
+- try launching tools - `opencode` or `edit tmp.txt`
+
+---
+
+Essential shortcuts (Zellij uses modes for stuff):
+- Enter pane mode -> CTRL + P
+- New pane below -> [Pane mode] then D
+- New pane right -> [Pane mode] then R
+- Move between panes -> ALT + [Arrow]
+- Close current pane -> [Pane mode] then X
+- Fullscreen current pane -> [Pane mode] then F
+- Enter tab mode -> CTRL + T
+- New tab -> [Tab mode] then N
+- Rename tab -> [Tab mode] then R
+- Next/prev tab -> ALT + RIGHT/LEFT
+- Detach session (leave) -> CTRL + O then D
+- Enter locked mode -> CTRL + G
+
+Modes can be exited by pressing 'ESC'
+- most importantly: get used to 'CTRL + P' [Pane Mode] and 'CTRL + T' [Tab Mode]
+- AND: attach 'a', list sessions 'ls', kill session 'k', create 'a -c [name]', detach 'CTRL + O' then 'D'
+
+---
+
+Settings & Configurations
+- to check current: `zellij setup --check`
+- to check default: `zellij setup --dump-config`
+- based on the setup check, can edit the config file: `edit $env:APPDATA\Zellij\config\config.kdl`
+    - change default_shell to "pwsh.exe"
+    - change scroll_buffer_size to 20000
+    - change scrollback_editor to "edit.exe"
+
+---
+
+Example SSH workflow
+- assume we want to open 3 SSH connections to: mc-pc, mc-vm, edge-pc
+- assume in another tab we want to have opencode
+- assume in a third tab we just want normal terminal stuff
+
+1. check sessions: `zellij ls`
+2. delete unnecessary sessions: `zellij k [session-name]`
+3. create new session: `zellij -s [session-name]` or `zellij -a -c [session-name]`
+4. Will enter onto default tab. press 'CTRL + T' to [Tab Mode]. press 'R' to rename tab to 'SSH'.
+5. Input new name, 'Enter' to confirm.
+6. Current pwsh pane: `ssh [mc-pc]`
+7. Create pane 2 (to the right): 'CTRL + P' to [Pane Mode]. 'R' to create pane to the right. Focused on new.
+8. Current right side pane: `ssh [mc-vm]`
+9. Create pane 3 (below right pane 2): 'CTRL + P' to [Pane Mode]. 'D' to create down. Focused on new.
+10. Current pwsh pane: `ssh [edge-pc]`. 'CTRL + P' then '[arrows]' to swap panes in window.
+11. Dynamic: `ALT + [arrows]` to swap between panes.
+12. Currently tab 1, now create tab 2: `CTRL + T` [Tab Mode] then `N` to create new tab. Focused into new.
+13. 'CTRL + T' [Tab Mode] then 'R' to rename tab to 'Scratchbook'.
+14. Input new name, 'Enter' to confirm.
+15. cd to $HOME\workspace\_personal\_scratchbook\ directory. Then launch `opencode`.
+16. Currently tab 2, now create tab 3: `CTRL + T` [Tab Mode] then `N` to create new tab. Focused into new.
+17. 'CTRL + T' [Tab Mode] then 'R', rename to 'MyConfigs' and 'Enter' to confirm
+18. cd to $HOME\workspace\_personal\my-configs\ repo
+19. 'll' or 'eza --tree --level=4'
+20. explicit tab switching: 'CTRL + T' then '[L/R arrow]'; or 'CTRL + T' then '1/2/3/etc' for specific tabs.
+21. Alternative switching: 'ALT + [arrows]' (switch from left pane to right pane, right most pane to next tab)
+22. Can also detach and return later. Currently have 3 SSH session, 1 OpenCode scratchbook, 1 configs terminal
+23. Detach without closing: 'CTRL + O' then 'D'
+24. Check sessions later: `zellij list-sessions` or `zellij ls`
+25. Reattach: `zellij a [session-name]
+26. 
+

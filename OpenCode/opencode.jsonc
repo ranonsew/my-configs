@@ -1,0 +1,101 @@
+{
+  // or can also use downloaded opencode-ai-config.json
+  "$schema": "https://opencode.ai/config.json",
+    
+  // add after completing `/connect` and `/models` in opencode terminal chat
+  "model": "openai/gpt-6.1-sol",
+    
+  // some defaults
+  "shell": "pwsh.exe",
+  "default_agent": "Builder",
+  "update": "notify",
+    
+  // whether to run formatter automatically after edits
+  "formatter": false,
+    
+  // web search provider selection
+  "websearch": {
+    "provider": "random
+  },
+    
+  // base permissions set:
+  // allow normal file reading with secrets file exclusion
+  // ask before edits, other than progress paths
+  // deny shell exec, block direct tool access outside project
+  // allow available webtools
+  // prevent subagent delegation initially
+  // disable code mode exec
+  // allows skills unless project specifically disallows
+  "permissions": [
+    {
+      "action": "read",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "read",
+      "resource": "*.env",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.env.*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*/.ssh/*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*credentials*",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "edit",
+      "resource": "progress/*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "external_directory",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "websearch",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "webfetch",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "subagent",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "execute",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "skill",
+      "resource": "*",
+      "effect": "allow"
+    }
+  ]
+}

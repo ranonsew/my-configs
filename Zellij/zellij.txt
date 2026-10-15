@@ -1,0 +1,69 @@
+run zellij:
+`zellij`
+
+create a session:
+`zellij --session [session_name]`
+
+detach session (keep in background):
+CTRL + O, then D
+
+attach session (from background):
+`zellij attach [session_name]`
+or
+`zellij a [session_name]`
+- can also create into foreground (option): `-c`
+- can also create into background (option): `-b`
+- can have trailing arguments after ' -- ' acting as first commands to run, e.g. `zellij a -c new-sess-1 -- htop`
+    - (option) close initial pane after command exits (only if have trailing arg): `--close-on-exit`
+    - (option) start command suspended, run when user press enter (only if have trailing arg): `--start-suspended`
+
+delete session:
+`zellij kill-sessions [session_name]`
+or
+`zellij k [session_name]`
+or (all)
+`zellij kill-all-sessions`
+or (all)
+`zellij ka`
+
+list sessions:
+`zellij list-sessions`
+or
+`zellij ls`
+
+setup flags:
+- `--check`                         :   check config
+- `--clean`                         :   reset config to default
+- `--dump-config`                   :   dump default config file to stdout
+- `--dump-layout [layout]`          :   dump specified layout file to stdout
+- `--generate-completion [shell]`   :   generate completions for specified shell
+
+other flags:
+- `--help`                  :   display help prompt
+- `--debug`                 :   gather additional debug info
+- `--version`               :   get version info
+- `--layout-string [KDL]`   :   use raw KDL layout string instead of a layout file
+
+
+Default Preset (displayed at the bottom)
+- CTRL + G  :   Lock Pane
+- CTRL + P  :   Pane mode
+- CTRL + T  :   Tab mode
+- etc
+
+
+new pane:
+CTRL + P, then N
+
+switch between panes:
+ALT + ARROW(UP/DOWN/LEFT/RIGHT)
+
+close pane:
+CTRL + P, then X
+
+new tab:
+CTRL + T, then N
+
+quit:
+CTRL + Q
+

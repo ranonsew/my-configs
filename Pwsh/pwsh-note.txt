@@ -1,0 +1,7 @@
+Last modified: 15/10/2026
+
+Using oh-my-posh for terminal styling on top of powershell 7
+
+Powershell 7 installed via scoop, set as default windows terminal
+
+

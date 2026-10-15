@@ -1,0 +1,116 @@
+Opencode (v2) setup notes
+
+Generally put into user space config:
+- Lin: ~/.config/opencode/*
+- Win: $HOME\.config\opencode\*
+
+Running opencode & authenticating initially:
+- in terminal: `opencode`
+- in opencode: `/connect` -- select integration (e.g. OpenAI, Anthropic, Z.AI)
+    - then authenticate with chosen method
+- in opencode: `/models` -- select model, variant, etc (e.g. codex sol 6.1)
+
+Skill loading with opencode:
+- skills not needed to register manually
+- skills automatically discovered by OpenCode through $HOME\.config\opencode\skills\*
+- as of 14/10/26, have 3 skills:
+    - requirements-to-spec
+    - progress-tracking
+    - code-review
+- example usage as follows:
+    - "Use @requirements-to-spec to examine my initial requirements & identify missing decisions"
+    - "Use @progress-tracking to summarize current project status"
+    - "Use @code-review and review the existing code in files @[file1] @[file2]"
+
+Suppose a situation in which only `requirements-to-spec` is needed in a project:
+- can create following example `[project]/opencode.jsonc`
+```jsonc
+
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "permissions": [
+    {
+      "action": "skill",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "skill",
+      "resource": "requirements-to-spec",
+      "effect": "allow"
+    },
+    {
+      "action": "skill",
+      "resource": "progress-tracking",
+      "effect": "allow"
+    }
+  ]
+}
+```
+
+---
+
+Segregated Agentic Stuff
+
+- prompt-scratchbook (check the directory)
+  - copy the whole dir contents to a segregated central area (under user folder context)
+  - use it isolated from others.
+  - Quickstart:
+    - `opencode`
+    - ensure have authenticated chosen model
+    - for simple use, simply @prompt-scratchbook skill, tell it you have an idea you want to brainstorm
+    - and follow up with normal conversation, info dump, semi-organized info, etc.
+    - technically it should use itself properly, but explicit is better for consistency
+    - Should be able to hold this information and organize it into a structured summary when requested
+    - Should be able to save this information into idea notes when requested
+    - Should be able to re-read idea notes and pick up where it left off before (at least 80%)
+    - Should be able to draft a prompt based on the organized structured summary & idea notes when requested
+    - Should be able to ask additional important unresolved issues before finishing the prompt draft
+    - Should be able to write the prompt draft into a document
+    - Should not copy or use the prompt and notes file outside the ideation context on its own.
+  - Core:
+    - for user to brainstorm, info dump, ask for help, name the idea
+    - for agent to organize those thoughts, info dumped, provide help
+    - for agent to on user request, save those organized thoughts for reference later
+    - for agent to review previous saved organized information when requested for later
+    - for agent to draft prompt based on saved organized information when requested
+    - for agent to clarify prompt draft required things that seem vague or missing
+    - for agent to complete prompt draft based on responses and clarifications from user
+    - for agent to archive ideas if user requests to abandon or archive the idea
+
+---
+
+[Check 'Skill-Reference' directory for more info]
+
+Current skills:
+
+- requirements-to-spec
+  - clarification thing. Use with requirements list in prompt or separate file
+  - it should ask clarifying questions about potential missed items or vague information
+  - it should ask before writing to a spec file
+
+- progress-tracking
+  - doesn't need to ask for permission to write progress tracking file
+  - based on spec file, and can use with context continuity skill
+  - tracks progress on related spec file and requirement
+
+- code-review
+  - review code stuff I guess, I heavily copied this one off somewhere and I haven't tried it
+
+- context-continuity
+  - per project, need to create:
+    - .context/tasks/
+    - .context/archive/
+  - then also per project need to copy:
+    - ~/.config/opencode/skills/context-continuity/templates/INDEX.md -> .context/INDEX.md
+    - ~/.config/opencode/skills/context-continuity/templates/TASK.md -> .context/tasks/TASK-001.md
+  - usage:
+    - generally should automatically load as long as we have the .context stuff setup
+    - just in case, should also explicitly load the skill before beginning task-related questions
+    - should explicitly load with the progress-tracker skill
+    - but again, generally it should automatically load
+
+---
+
+

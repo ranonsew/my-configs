@@ -1,0 +1,37 @@
+Host server-laptop
+    HostName 172.20.10.9
+    Port 2222
+    User developer
+    LocalForward 80 172.20.10.9:80
+    LocalForward 443 172.20.10.9:443
+    LocalForward 5432 172.20.10.9:5432
+    LocalForward 8080 172.20.10.9:8080
+    PreferredAuthentications password
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    Compression yes
+    TCPKeepAlive yes
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+
+# wifi: 172.16.24.X
+# eth: 192.168.24.X
+Host mc-pc
+    HostName 172.16.24.X
+    User [user]
+
+# VM
+Host mc-vm
+    HostName 192.168.56.X
+    User [user]
+    ProxyJump mc-pc
+
+# wifi-only edge
+Host edge-pc
+    HostName 172.16.24.130
+    User admind
